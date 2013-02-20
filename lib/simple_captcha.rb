@@ -48,7 +48,7 @@ module SimpleCaptcha
 
   # tmp directory
   mattr_accessor :tmp_path
-  @@tmp_path = nil
+  @@tmp_path = File.join(Rails.root,"tmp","captcha");
 
   def self.add_image_style(name, params = [])
     SimpleCaptcha::ImageHelpers.image_styles.update(name.to_s => params)
